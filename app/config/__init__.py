@@ -2,8 +2,17 @@
 Config Module and its associated classes
 """
 
-# from config import
+from app.config.config import Config, fetch_root
 
-# __all__ = [
-
-# ]
+__all__ = [
+    "Config",
+    "fetch_root",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+]
