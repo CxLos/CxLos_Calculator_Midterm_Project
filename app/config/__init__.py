@@ -2,7 +2,7 @@
 Config Module and its associated classes
 """
 
-# from
+# from config import
 
 # __all__ = [
 
