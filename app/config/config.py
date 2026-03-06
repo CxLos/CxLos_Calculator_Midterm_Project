@@ -4,6 +4,7 @@
 from dataclasses import dataclass
 import os
 from pathlib import Path
+from app.other.exceptions import ConfigurationError
 
 from dotenv import load_dotenv
 load_dotenv()
