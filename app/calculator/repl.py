@@ -28,7 +28,7 @@ def repl():
 
                 if command == 'help':
                     print("\nAvailable commands: \n")
-                    print("add, subtract, multiply, divide, power, sqrt, modulus - Perform calculations")
+                    print("  add, subtract, multiply, divide, power, sqrt, modulus")
                     print("  history - Show history")
                     print("  clear - Clear history")
                     print("  undo - Undo the last calculation")

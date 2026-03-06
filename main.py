@@ -1,6 +1,7 @@
-"""
-Main file to start application
-"""
 
-# if __name__ == "__main__":
-#     calculator()
+# ============= Imports ============= #
+
+from app.calculator.repl import repl
+
+if __name__ == "__main__":
+    repl()

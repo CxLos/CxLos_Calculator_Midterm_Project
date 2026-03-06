@@ -209,4 +209,4 @@ class OperationFactory:
         ops_class = cls._ops.get(operation_type.lower())
         if not ops_class:
             raise ValueError(f"Unknown operation: {operation_type}")
-        return ops_class
+        return ops_class()
