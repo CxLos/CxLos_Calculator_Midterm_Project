@@ -31,7 +31,7 @@ class Calculator:
         """
         if config is None:
             current_file = Path(__file__)
-            project_root = current_file.parent.parent
+            project_root = current_file.parent.parent.parent
             config = Config(base_dir=project_root)
 
         self.config = config
