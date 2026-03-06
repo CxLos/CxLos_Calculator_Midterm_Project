@@ -163,9 +163,9 @@ class Floor(Operation):
     def validate_operands(self, a: Decimal, b: Decimal) -> None:
         """Validate that b != 0"""
 
-        super().validadte_operands(a,b)
+        super().validate_operands(a,b)
         if b == 0:
-            raise("Cannot calculate floor division with b = 0")
+            raise ValidationError("Cannot calculate floor division with b = 0")
         
     def execute(self, a: Decimal, b: Decimal) -> Decimal:
         """Execute floor division"""
