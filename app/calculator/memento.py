@@ -23,7 +23,6 @@ class Memento:
             'history': [calc.to_dict() for calc in self.history],
             'timestamp': self.timestamp.isoformat()
         }
-    
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'Memento':
