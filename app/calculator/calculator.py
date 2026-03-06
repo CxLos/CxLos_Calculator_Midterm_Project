@@ -24,7 +24,7 @@ class Calculator:
     """
 
     """
-
+    # ---------------------------------------------------
     def __init__(self, config: Optional[Config] = None):
         """
 
@@ -52,6 +52,7 @@ class Calculator:
 
         logging.info("Calculator initialized with configuration")
 
+    # ---------------------------------------------------
     def _setup_logging(self) -> None:
         """
 
@@ -70,13 +71,15 @@ class Calculator:
         except Exception as e:
             print(f"Error setting up logging: {e}")
             raise
-
+    
+    # ---------------------------------------------------
     def _setup_directories(self) -> None:
         """
 
         """
         self.config.history_dir.mkdir(parents=True, exist_ok=True)
 
+    # ---------------------------------------------------
     def add_observer(self, observer: HistoryObserver) -> None:
         """
 
@@ -84,6 +87,7 @@ class Calculator:
         self.observers.append(observer)
         logging.info(f"Added observer: {observer.__class__.__name__}")
 
+    # ---------------------------------------------------
     def remove_observer(self, observer: HistoryObserver) -> None:
         """
 
@@ -91,6 +95,7 @@ class Calculator:
         self.observers.remove(observer)
         logging.info(f"Removed observer: {observer.__class__.__name__}")
 
+    # ---------------------------------------------------
     def notify_observers(self, calculation: Calculation) -> None:
         """
 
@@ -98,6 +103,7 @@ class Calculator:
         for observer in self.observers:
             observer.update(calculation)
 
+    # ---------------------------------------------------
     def set_operation(self, operation: Operation) -> None:
         """
 
@@ -105,6 +111,7 @@ class Calculator:
         self.operation_strategy = operation
         logging.info(f"Set operation: {operation}")
 
+    # ---------------------------------------------------
     def perform_operation(
         self,
         a: Union[str, Number],
@@ -148,6 +155,7 @@ class Calculator:
             logging.error(f"Operation failed: {str(e)}")
             raise OperationError(f"Operation failed: {str(e)}")
 
+    # ---------------------------------------------------
     def save_history(self) -> None:
         """
 
@@ -178,6 +186,7 @@ class Calculator:
             logging.error(f"Failed to save history: {e}")
             raise OperationError(f"Failed to save history: {e}")
 
+    # ---------------------------------------------------
     def load_history(self) -> None:
         """
         """
@@ -204,6 +213,7 @@ class Calculator:
             logging.error(f"Failed to load history: {e}")
             raise OperationError(f"Failed to load history: {e}")
 
+    # ---------------------------------------------------
     def get_history_dataframe(self) -> pd.DataFrame:
         """
  
@@ -219,6 +229,7 @@ class Calculator:
             })
         return pd.DataFrame(history_data)
 
+    # ---------------------------------------------------
     def show_history(self) -> List[str]:
         """
 
@@ -228,6 +239,7 @@ class Calculator:
             for calc in self.history
         ]
 
+    # ---------------------------------------------------
     def clear_history(self) -> None:
         """
 
@@ -237,6 +249,7 @@ class Calculator:
         self.redo_stack.clear()
         logging.info("History cleared")
 
+    # ---------------------------------------------------
     def undo(self) -> bool:
         """
 
@@ -249,6 +262,7 @@ class Calculator:
         self.history = memento.history.copy()
         return True
 
+    # ---------------------------------------------------
     def redo(self) -> bool:
         """
 
