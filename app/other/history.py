@@ -2,9 +2,11 @@
 # ========== Imports ========== #
 
 from abc import ABC, abstractmethod
-from typing import Any
+from typing import Any, TYPE_CHECKING
 import logging
-from app.calculator.calculation import Calculation
+
+if TYPE_CHECKING:
+    from app.calculator.calculation import Calculation
 
 # ======================================== #
 
@@ -13,7 +15,6 @@ class HistoryObserver(ABC):
     """
     Observer that monitors & reacts to new calculation events.
     """
-    from app.calculator.calculation import Calculation
 
     @abstractmethod
     def update(self, calculation) -> None:
