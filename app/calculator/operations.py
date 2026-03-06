@@ -172,6 +172,14 @@ class Floor(Operation):
 
         self.validate_operands(a,b)
         return Decimal(float(a) // float(b))
+    
+class Percentage(Operation):
+    """Calculate percentage of a number"""
+
+    def execute(self, a: Decimal, b: Decimal) -> Decimal:
+        """Execute percentage calculation"""
+
+        return (a * b) / Decimal(100)
 
 # ============================
 # Operation Factory
@@ -189,7 +197,8 @@ class OperationFactory:
         'power': Power,
         'sqrt': SQRT,
         'modulus': Modulus,
-        'floor': Floor
+        'floor': Floor,
+        'percentage': Percentage
     }
 
     @classmethod

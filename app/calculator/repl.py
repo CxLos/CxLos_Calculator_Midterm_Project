@@ -28,7 +28,7 @@ def repl():
 
                 if command == 'help':
                     print("\nAvailable commands: \n")
-                    print("  add, subtract, multiply, divide, power, sqrt, modulus, floor")
+                    print("  add, subtract, multiply, divide, power, sqrt, modulus, floor, percentage")
                     print("  history - Show history")
                     print("  clear - Clear history")
                     print("  undo - Undo the last calculation")
@@ -92,7 +92,7 @@ def repl():
                         print(f"Error loading history: {e}")
                     continue
 
-                if command in ['add', 'subtract', 'multiply', 'divide', 'power', 'sqrt', 'modulus', 'floor']:
+                if command in ['add', 'subtract', 'multiply', 'divide', 'power', 'sqrt', 'modulus', 'floor', 'percentage']:
                     try:
                         print("\nEnter numbers (or 'cancel' to abort):")
                         a = input("First number: ")

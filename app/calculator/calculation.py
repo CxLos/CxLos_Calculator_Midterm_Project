@@ -43,6 +43,7 @@ class Calculation:
             "Power": lambda x,y: Decimal(pow(float(x), float(y))) if y >=0 else self._raise_neg_power(),
             "Modulus": lambda x,y: x%y if y!=0 else self._raise_div_zero(),
             "Floor": lambda x,y: Decimal(float(x) // float(y)) if y!=0 else self._raise_div_zero(),
+            "Percentage": lambda x,y: (x * y) / Decimal(100),
             "SQRT": lambda x,y: (
                 Decimal(pow(float(x), 1/ float(y)))
                 if x >= 0 and y!=0
