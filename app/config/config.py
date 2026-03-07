@@ -21,7 +21,6 @@ def fetch_root() -> Path:
 
     current_file = Path(__file__)
 
-    print("Parent directory:", current_file.parent.parent.parent)
     return current_file.parent.parent.parent
 
 # fetch_root()

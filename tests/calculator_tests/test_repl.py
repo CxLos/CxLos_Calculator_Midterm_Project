@@ -44,7 +44,7 @@ def test_divide(capsys):
     assert "5" in out
 
 def test_history_empty(capsys):
-    run_repl(["history", "exit"])
+    run_repl(["clear", "history", "exit"])
     out = capsys.readouterr().out
     assert "No history yet" in out
 
