@@ -11,9 +11,6 @@ A professional command-line calculator midterm project built with Python, featur
 - [Usage Guide](#-usage-guide)
 - [Testing](#-testing)
 - [CI/CD Pipeline](#-cicd-pipeline)
-- [Project Structure](#-project-structure)
-- [Code Documentation](#-code-documentation)
-- [License](#-license)
 
 ---
 
